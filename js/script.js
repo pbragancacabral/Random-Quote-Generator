@@ -21,9 +21,9 @@ function getRandomQuote() {
 }
 
 function printQuote() {
-    let html = "";
     const quote = getRandomQuote();
-    html += "<p class='quote'>" + quote.quote + "</p>";
-    html += "<p class='source'>" + quote.source + "</p>";
-    document.getElementById('quote-box').innerHTML = html;
+    document.getElementById('quote-box').innerHTML = ` 
+        <p class='quote'>${quote.quote}</p>
+        <p class='source'>${quote.source}</p>
+    `;
 }
