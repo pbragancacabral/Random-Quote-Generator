@@ -1,5 +1,3 @@
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
 const quotes = [
     {
         quote: "What comes, when it comes, will be what it is.",
@@ -15,15 +13,14 @@ const quotes = [
     }
 ];
 
-function getRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
-}
+const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
-function printQuote() {
+const printQuote = () => {
     const quote = getRandomQuote();
     document.getElementById('quote-box').innerHTML = ` 
         <p class='quote'>${quote.quote}</p>
         <p class='source'>${quote.source}</p>
     `;
-}
+};
+
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
